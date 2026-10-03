@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/all.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<title>Currency-Exchange</title>
+	</head>
+	<body>
+		<main class="vh-100 w-100">
+			<nav
+				class="bg-black d-flex align-items-centers justify-content-around fixed-top p-2"
+			>
+				<img
+					class="col-3 col-sm-2 col-md-1 logo rounded-2"
+					src="image/nav-banner.png"
+					alt=""
+				/>
+				<h1 class="fs-2 fw-bold text-warning my-auto">Currency-Converter</h1>
+			</nav>
+			<header class="d-flex justify-content-center align-items-center h-100">
+				<section
+					class="col-12 col-sm-10 col-md-8 p-5 d-flex flex-column gap-4 align-items-center"
+				>
+					<div class="w-100">
+						<h2 class="text-secondary fw-bold fs-4">Amount</h2>
+						<div class="d-flex position-relative">
+							<input
+								type="text"
+								class="text-primary p-2 px-4 bg-transparent border-top-0 border-start-0 border-end-0 border-3 border-primary w-100 fw-bold fs-4 shadow-none"
+								placeholder="1 By Default"
+							/>
+							<i
+								class="fa-solid fa-right-left fs-1 text-primary position-absolute end-0"
+							></i>
+						</div>
+					</div>
+					<div class="w-75 position-relative">
+						<img
+							src="https://flagsapi.com/AE/shiny/32.png"
+							class="position-absolute start-0 ps-2 pt-1 flag"
+							alt="..."
+						/>
+						<select class="form-select bg-black text-light px-5"></select>
+					</div>
+					<div class="w-75 position-relative">
+						<img
+							src="https://flagsapi.com/AE/shiny/32.png"
+							class="position-absolute start-0 ps-2 pt-1 flag"
+							alt="..."
+						/>
+						<select class="form-select bg-black text-light px-5"></select>
+					</div>
+					<button class="btn btn-dark w-75">Convert</button>
+					<p class="fs-2 text-light fw-bold output">1 AED = 1 AED</p>
+				</section>
+			</header>
+		</main>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

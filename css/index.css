@@ -1,0 +1,18 @@
+* {
+	font-family: cursive;
+}
+main {
+	background: linear-gradient(to right, black, 80%, #959ca2);
+}
+.logo {
+	transition: all 0.4s linear;
+}
+.logo:hover {
+	transform: scale(0.8);
+}
+section {
+	background: linear-gradient(170deg, black, teal);
+}
+input {
+	outline: none;
+}
