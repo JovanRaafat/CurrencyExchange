@@ -175,9 +175,9 @@ const $changeflag = ($index) =>
 		`https://flagsapi.com/${$selects[$index].value.slice(0, 2)}/shiny/32.png`);
 
 function $display($conversion) {
-	isNaN($input.value) || $input.value == ""
-		? ($output.innerHTML = `1 ${$selects[0].value} = ${$conversion.toFixed(2)} ${$selects[1].value}`)
-		: ($output.innerHTML = `${+$input.value} ${$selects[0].value} = ${(+$input.value * $conversion).toFixed(2)} ${$selects[1].value}`);
+	isNaN($input.value) || $input.value == "" || $input.value <= 0
+		? ($output.innerHTML = `1.00 ${$selects[0].value} = ${$conversion.toFixed(2)} ${$selects[1].value}`)
+		: ($output.innerHTML = `${(+$input.value).toFixed(2)} ${$selects[0].value} = ${(+$input.value * $conversion).toFixed(2)} ${$selects[1].value}`);
 }
 
 async function $getData() {
@@ -185,9 +185,11 @@ async function $getData() {
 		let $result = await fetch(
 			`https://v6.exchangerate-api.com/v6/acddc06bc6768bb23005b51c/latest/${$selects[0].value}`,
 		);
-		let $data = await $result.json();
+		let {
+			conversion_rates: { [$selects[1].value]: $conversion },
+		} = await $result.json();
 
-		$display($data.conversion_rates[$selects[1].value]);
+		$display($conversion);
 	} catch (er) {
 		$output.innerHTML = er.message;
 	} finally {
